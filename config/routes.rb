@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  #devise_for :users, controllers: {
+   # sessions: 'users/sessions'
+  #}
+
   namespace :admin do
     get '/', :to => 'dashboard#index'
     #get 'dashboard/index'
@@ -8,4 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+
+
 end

@@ -15,12 +15,18 @@
 	  <!-- Poppins font -->
 	  <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'skilline', "data-turbo-track": "reload"  %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="antialiased">
-  
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      
       <%= yield %>
   
   </body>
